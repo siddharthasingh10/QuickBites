@@ -1,8 +1,11 @@
-.nav-items > ul {
+.nav-items>ul {
     list-style-type: none;
     display: flex;
     padding: 0;
     margin: 0;
+}
+*{
+    text-decoration: none;
 }
 
 /* Header styling */
@@ -18,137 +21,137 @@
     border-radius: 8px;
 }
 
+
 /* Navigation items */
-.nav-items > ul > li {
+.nav-items>ul>li {
     padding: 10px 20px;
     margin: 0 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: #333;
     cursor: pointer;
 }
 
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
 /* Navigation item hover effect */
-.nav-items > ul > li:hover {
+.nav-items>ul>li:hover {
     background-color: #ff0000;
     color: white;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
-/* Logo styling */
-/* .logo {
-    width: 120px;
-    height: 50px;
-} */
+
 .logo {
-    width: 120px; /* Set a good default width */
-    height: 60px; /* Auto height to maintain aspect ratio */
-    max-width: 100%; /* Prevent the image from exceeding the container size */
-    object-fit: contain; /* Ensure the entire image is shown without distortion */
-    border-radius: 8px; /* Optional: Adds slight rounding to the corners */
+    width: 120px;
+    /* Set a good default width */
+    height: 60px;
+    /* Auto height to maintain aspect ratio */
+    max-width: 100%;
+    /* Prevent the image from exceeding the container size */
+    object-fit: contain;
+    /* Ensure the entire image is shown without distortion */
+    border-radius: 8px;
+    /* Optional: Adds slight rounding to the corners */
     cursor: pointer;
-}
-.card {
-    width: 230px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    margin: 20px;
-    font-family: 'Arial', sans-serif;
-    cursor: pointer;
-}
-
-/* Card hover effect */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Image styling */
-.card > img {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    object-fit: cover;
-    height: 150px;
-    margin-bottom: 15px;
 }
 
 /* Restaurant name */
-.card h2 {
-    font-size: 20px;
-    color: #333;
-    margin: 10px 0;
-    font-weight: bold;
-}
 
-/* Food category styling */
-.card h3 {
-    font-size: 16px;
-    color: #666;
-    margin: 5px 0;
-    font-weight: normal;
-}
 
-/* Rating styling */
-.card h4 {
-    font-size: 14px;
-    color: #4CAF50;
-    font-weight: bold;
-    margin-top: 10px;
-}
 .restaurant {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the cards */
-    margin: 20px; /* Margin around the entire restaurant list */
+    justify-content: center;
+    /* Center the s */
+    margin: 20px;
+    /* Margin around the entire restaurant list */
 }
 
+/* Card.css */
+
 .card {
-    flex: 1 1 300px; /* Each card takes at least 300px of width */
-    margin: 15px; /* Space around each card */
-    max-width: 300px; /* Limit the card width */
-    border: 1px solid #ddd; /* Card border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 16px; /* Padding inside card */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    transition: transform 0.2s; /* Transition for hover effect */
-    background-color: #fff; /* White background for the card */
+    display: flex;
+    /* Use Flexbox for layout */
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center items horizontally */
+    justify-content: center;
+    /* Center items vertically */
+    width: 280px;
+    /* Fixed width for all s */
+    height: 350px;
+    /* Fixed height for all s */
+    background-color: #fff;
+    /* White background for s */
+    border: 1px solid #938a8a;
+    /* Light gray border */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    margin: 15px;
+    /* Margin between s */
+    padding: 15px;
+    /* Padding inside the card */
+    transition: transform 0.2s;
+    /* Transition for hover effect */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+   
+    .card:hover {
+    transform: scale(1.05);
+    /* Scale card on hover for effect */
 }
 
 .card img {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Keep aspect ratio */
-    border-radius: 8px 8px 0 0; /* Round top corners of the image */
+    width: 100%;
+    /* Make image fill the card width */
+    height: 150px;
+    /* Fixed height for images */
+    object-fit: cover;
+    /* Cover the area without stretching */
+    border-radius: 4px;
+    /* Rounded corners for images */
 }
 
-.card h2 {
-    font-size: 1.5rem; /* Title font size */
-    margin: 10px 0; /* Margin around the title */
-    color: #333; /* Title color */
+.card h2 { text-decoration: none;
+    font-size: 1.5em;
+    /* Font size for restaurant name */
+    margin: 10px 0;
+    /* Margin above and below */
 }
 
-.card h3 {
-    font-size: 1.2rem; /* Cuisine font size */
-    margin: 5px 0; /* Margin around cuisine */
-    color: #777777; /* Cuisine color */
+.card h3 { text-decoration: none;
+    font-size: 1.4em;
+    /* Font size for cuisine */
+    margin: 5px 0;
+    /* Margin above and below */
+    color: #666;
+    /* Gray color for cuisine text */
 }
 
-.card h4 {
-    font-size: 1rem; /* Rating font size */
-    margin: 5px 0; /* Margin around rating */
-    color: #46f312; /* Rating color (orange) */
+.card h4 { text-decoration: none;
+    font-size: 1.3em;
+    /* Font size for average rating */
+    margin: 5px 0;
+    /* Margin above and below */
+    color: #a5ca11;
+    /* Color for rating text */
 }
 
-/* Hover effect for the card */
-.card:hover {
-    transform: scale(1.05); /* Slightly scale up on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
+
 /* Container for the search bar */
 .search-container {
     display: flex;
@@ -156,38 +159,148 @@
     align-items: center;
     margin: 20px 0;
     padding: 10px;
-  }
-  
-  /* Style for the search input */
-  .search-input {
-    width: 400px;
+}
+
+/* Style for the search input */
+.search-input {
+    width: 450px;
     padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ddd;
+    font-size: 18px;
+    border: 2px solid #656262;
     border-radius: 5px;
     outline: none;
-    transition: all 0.3s ease;
-  }
-  
-  /* Focus effect for the input */
-  .search-input:focus {
-    border-color: #8f8df7;
-  }
-  
-  /* Style for the search button */
-  .search-container button {
+    transition: all 0.1s ease;
+}
+
+/* Focus effect for the input */
+.search-input:focus {
+    border-color: #2926f7;
+}
+
+/* Style for the search button */
+.search-container button {
     padding: 10px 20px;
     margin-left: 10px;
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover effect for the button */
-  .search-container button:hover {
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for the button */
+.search-container button:hover {
     background-color: red;
-  }
+}
+
+.no-result-found {
+    text-align: center;
+    /* Center the text */
+    font-size: 1.5rem;
+    /* Increase font size */
+    font-weight: bold;
+    /* Make text bold */
+    color: #ff6347;
+    /* Tomato color for visibility */
+
+
+}
+
+
+
+.error-text {
+    color: #ff0000;
+
+}
+
+/* RestaurantMenu.css */
+
+/* RestaurantInfo.css */
+
+.restaurant-info-container {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space between image and details */
+    align-items: center;
+    /* Center vertically */
+    max-width: 1200px;
+    /* Maximum width */
+    margin: 20px auto;
+    /* Center horizontally with margin */
+    padding: 20px;
+    /* Padding around the container */
+    border: 1px solid #ccc;
+    /* Optional border */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.restaurant-image {
+    flex: 1;
+    /* Take available space for the image */
+    padding: 20px;
+    /* Padding around the image */
+}
+
+.image {
+    max-width: 100%;
+    /* Responsive image */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Optional rounded corners for image */
+}
+
+.restaurant-details {
+    flex: 2;
+    /* Take available space for details */
+    padding: 20px;
+    /* Padding inside the details */
+}
+
+.restaurant-name {
+    font-size: 2em;
+    /* Larger font size for the name */
+    margin: 0 0 10px;
+    /* Margin below the name */
+}
+
+.restaurant-cuisine,
+.restaurant-rating,
+.restaurant-address {
+    font-size: 1.2em;
+    /* Slightly larger font size */
+    margin: 5px 0;
+    /* Margin above and below */
+}
+
+.checkout-button {
+    margin-top: 20px;
+    /* Space above the button */
+    padding: 10px 20px;
+    /* Padding for the button */
+    font-size: 1.2em;
+    /* Button text size */
+    color: white;
+    /* Text color */
+    background-color: #e63946;
+    /* Button color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover */
+}
+
+.checkout-button:hover {
+    background-color: #d62839;
+    /* Darker shade on hover */
+}

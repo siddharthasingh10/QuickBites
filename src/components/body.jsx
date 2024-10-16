@@ -1,36 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { data } from "./../constant";
 import RestaurantCard from "./restaurantCard";
+import { Link } from "react-router-dom";
 
-// Filter function to search for restaurants
+// Function to filter restaurants based on search input
 function filterData(searchText, restaurants) {
-  // Use the filter method to get matching results
-  const filteredData = restaurants.filter((restaurant) =>
+  return restaurants.filter((restaurant) =>
     restaurant.name.toLowerCase().includes(searchText.toLowerCase()) ||
     restaurant.cuisine.toLowerCase().includes(searchText.toLowerCase())
   );
-
-  return filteredData; // Return the filtered array
 }
 
 function Body() {
-  const [searchText, setSearchText] = useState(""); // Track input field value
-  const [restaurants, setRestaurants] = useState(data); // Store restaurants data
+  // State variables
+  const [filteredRestaurant, setFilteredRestaurant] = useState(data); // Initially show all data
+  const [searchText, setSearchText] = useState(""); // Track input value
+  const [allRestaurants, setAllRestaurants] = useState(data); // Store all restaurant data
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-  //   );
-
-  //   const json = await data.json();
-  //   setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-
-  // };
-
+  // Function to handle search action
+  const handleSearch = () => {
+    const filteredData = filterData(searchText, allRestaurants); //flter from all restaurant
+    setFilteredRestaurant(filteredData); // Update state with filtered data
+  };
 
   return (
     <>
@@ -38,41 +29,28 @@ function Body() {
         <input
           type="text"
           className="search-input"
-          placeholder="Search your item"
+          placeholder="Search your favorite food or restraunt.."
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)} // Update state on input change
+          onChange={(e) => setSearchText(e.target.value)} // Update search text on input change
         />
-        <button
-          onClick={() => {
-            setRestaurants(data);
-            // Filter the data based on searchText
-            const filteredData = filterData(searchText, restaurants);
-            setRestaurants(filteredData); // Update the restaurants state with filtered data
-          }}
-        >
-          Search
-        </button>
+        <button onClick={handleSearch}>Search</button>
       </div>
 
       <div className="restaurant">
-        {restaurants.map((restaurant) => (
-
-
-     
-   
-     <RestaurantCard key={restaurant.id}
-            name={restaurant.name}
-            cuisine={restaurant.cuisine}
-            image={restaurant.image}
-
-            avgRating={restaurant.avgRating}
-
-          />
-
-
-
-        ))
-        }
+        {filteredRestaurant.length > 0 ? (
+          filteredRestaurant.map((restaurant) => (
+         <Link to={`/restaurant/${restaurant.id}`}> <RestaurantCard
+              key={restaurant.id}
+              name={restaurant.name}
+              cuisine={restaurant.cuisine}
+              image={restaurant.image}
+              avgRating={restaurant.rating}
+            />
+            </Link>  
+          ))
+        ) : (
+          <p className="no-result-found">No Food or Restaurants found.</p> // Message for no results
+        )}
       </div>
     </>
   );
